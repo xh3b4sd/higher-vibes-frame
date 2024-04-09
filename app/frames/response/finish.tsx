@@ -1,4 +1,5 @@
 /* eslint-disable react/jsx-key */
+import { newUrl } from "@/utils/url";
 import { Button } from "frames.js/next";
 
 export const finishResponse = () => {
@@ -18,7 +19,7 @@ export const finishResponse = () => {
       </div>
     ),
     buttons: [
-      <Button action="post" target={{ query: { value: "reset" } }}>
+      <Button action="post" target={newUrl("/api/frames?value=reset").toString()}>
         Do It Again
       </Button>
     ],
