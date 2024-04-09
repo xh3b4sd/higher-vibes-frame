@@ -1,14 +1,8 @@
-import { fetchMetadata } from "frames.js/next";
-import { newUrl } from "./url";
+import type { Metadata } from 'next'
 
-export async function generateMetadata() {
-  return {
-    title: "Higher Vibes",
-    description: "Farcaster Frame Server For The Higher Society",
-    other: {
-      ...(await fetchMetadata(newUrl("/frames"))),
-    },
-  };
+export const metadata: Metadata = {
+  title: "Higher Vibes",
+  description: "Farcaster Frame Server For The Higher Society",
 }
 
 export default function Page() {
