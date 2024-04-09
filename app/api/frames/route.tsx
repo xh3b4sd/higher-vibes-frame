@@ -1,11 +1,11 @@
 /* eslint-disable react/jsx-key */
 import { Button } from "frames.js/next";
-import { frames } from "./frames";
-import { verifyString } from "./verify";
-import { invalidResponse } from "./response/invalid";
-import { finishResponse } from "./response/finish";
+import { frames } from "../../frames";
+import { verifyString } from "../../../utils/verify";
+import { invalidResponse } from "../../frames/response/invalid";
+import { finishResponse } from "../../frames/response/finish";
 import createRecord from "@/utils/airtable";
-import { newUrl } from "../url";
+import { newUrl } from "../../../utils/url";
 
 // @ts-ignore
 const handleRequest = frames(async (ctx: any) => {
