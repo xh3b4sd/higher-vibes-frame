@@ -5,7 +5,7 @@ import { finishResponse } from "../../response/finish";
 import createRecord from "@/utils/airtable";
 import { createFrames } from "frames.js/next";
 
-export const frames = createFrames({
+const frames = createFrames({
   basePath: "/submit",
 });
 

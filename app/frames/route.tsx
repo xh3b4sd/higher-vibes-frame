@@ -3,7 +3,7 @@ import { Button } from "frames.js/next";
 import { newUrl } from "../../utils/url";
 import { createFrames } from "frames.js/next";
 
-export const frames = createFrames({
+const frames = createFrames({
   basePath: "/frames",
 });
 
