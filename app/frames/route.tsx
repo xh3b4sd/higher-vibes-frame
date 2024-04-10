@@ -1,7 +1,11 @@
 /* eslint-disable react/jsx-key */
 import { Button } from "frames.js/next";
-import { frames } from "../../frames";
-import { newUrl } from "../../../utils/url";
+import { newUrl } from "../../utils/url";
+import { createFrames } from "frames.js/next";
+
+const frames = createFrames({
+  basePath: "/frames",
+});
 
 // @ts-ignore
 const handleRequest = frames(async (ctx: any) => {
@@ -22,7 +26,7 @@ const handleRequest = frames(async (ctx: any) => {
     ),
     textInput: "What made you happy recently?",
     buttons: [
-      <Button action="post" target={newUrl("/api/frames/submit").toString()}>
+      <Button action="post" target={newUrl("/submit").toString()}>
         Send
       </Button>,
       <Button action="link" target={newUrl("/").toString()}>

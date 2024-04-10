@@ -19,7 +19,7 @@ export const finishResponse = () => {
       </div>
     ),
     buttons: [
-      <Button action="post" target={newUrl("/api/frames").toString()}>
+      <Button action="post" target={newUrl("/frames").toString()}>
         Do It Again
       </Button>
     ],
