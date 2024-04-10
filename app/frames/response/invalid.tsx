@@ -19,7 +19,7 @@ export const invalidResponse = () => {
       </div>
     ),
     buttons: [
-      <Button action="post" target={newUrl("/api/frames?value=reset").toString()}>
+      <Button action="post" target={newUrl("/api/frames").toString()}>
         Try Again
       </Button>
     ],
