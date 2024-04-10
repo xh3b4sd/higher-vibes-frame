@@ -22,7 +22,7 @@ const handleRequest = frames(async (ctx: any) => {
     ),
     textInput: "What made you happy recently?",
     buttons: [
-      <Button action="post" target={newUrl("/api/submit").toString()}>
+      <Button action="post" target={newUrl("/api/frames/submit").toString()}>
         Send
       </Button>,
       <Button action="link" target={newUrl("/").toString()}>
