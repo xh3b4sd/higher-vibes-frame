@@ -1,24 +1,10 @@
 /* eslint-disable react/jsx-key */
 import { Button } from "frames.js/next";
 import { frames } from "../../frames";
-import { verifyString } from "../../../utils/verify";
-import { invalidResponse } from "../../frames/response/invalid";
-import { finishResponse } from "../../frames/response/finish";
-import createRecord from "@/utils/airtable";
 import { newUrl } from "../../../utils/url";
 
 // @ts-ignore
 const handleRequest = frames(async (ctx: any) => {
-  console.log(ctx)
-  if (ctx.searchParams.value === "submit") {
-    if (!verifyString(ctx.message?.inputText)) {
-      return invalidResponse();
-    } else {
-      createRecord(String(ctx.message?.requesterFid), ctx.message?.inputText);
-      return finishResponse();
-    }
-  }
-
   return {
     image: (
       <div tw="bg-purple-800 text-white w-full h-full justify-center items-center flex flex-col">
@@ -36,7 +22,7 @@ const handleRequest = frames(async (ctx: any) => {
     ),
     textInput: "What made you happy recently?",
     buttons: [
-      <Button action="post" target={newUrl("/api/frames?value=submit").toString()}>
+      <Button action="post" target={newUrl("/api/submit").toString()}>
         Send
       </Button>,
       <Button action="link" target={newUrl("/").toString()}>
