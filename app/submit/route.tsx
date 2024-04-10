@@ -1,9 +1,13 @@
 /* eslint-disable react/jsx-key */
-import { frames } from "../../../frames";
-import { verifyString } from "../../../../utils/verify";
-import { invalidResponse } from "../../../frames/response/invalid";
-import { finishResponse } from "../../../frames/response/finish";
+import { verifyString } from "../../utils/verify";
+import { invalidResponse } from "../../response/invalid";
+import { finishResponse } from "../../response/finish";
 import createRecord from "@/utils/airtable";
+import { createFrames } from "frames.js/next";
+
+export const frames = createFrames({
+  basePath: "/submit",
+});
 
 // @ts-ignore
 const handleRequest = frames(async (ctx: any) => {
@@ -15,4 +19,5 @@ const handleRequest = frames(async (ctx: any) => {
   }
 });
 
+export const GET = handleRequest;
 export const POST = handleRequest;
